@@ -1,18 +1,22 @@
 package com.bhushxxx.villmate;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AccountFragment.OnFragmentInteractionListener, Nearby_shopsFragment.OnFragmentInteractionListener {
@@ -69,16 +73,25 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
 
-        fragmentManager = getSupportFragmentManager();
+
+
+        /*fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.fragment_container, home_fragment);
-        fragmentTransaction.commit();
+        fragmentTransaction.commit();*/
+
+        Intent intent = new Intent(getApplicationContext() , LocationActivity.class);
+        startActivity(intent);
 
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
 
     public void checkout_activity(View view) {
+
+
+
+
 
         Intent i = new Intent(getApplicationContext(), CheckoutActivity.class);
         startActivity(i);
