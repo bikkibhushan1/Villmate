@@ -1,14 +1,27 @@
 package com.bhushxxx.villmate;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 
 /**
@@ -19,11 +32,17 @@ import android.view.ViewGroup;
  * Use the {@link Nearby_shopsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Nearby_shopsFragment extends Fragment {
+public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    GoogleMap googleMap;
+    MapView mapView;
+    View view;
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -59,6 +78,9 @@ public class Nearby_shopsFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+
         }
     }
 
@@ -66,7 +88,28 @@ public class Nearby_shopsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nearby_shops, container, false);
+        view =  inflater.inflate(R.layout.fragment_nearby_shops, container, false);
+        return  view;
+
+
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mapView = view.findViewById(R.id.mapView);
+        if (mapView!= null){
+
+            mapView.onCreate(null);
+            mapView.onResume();
+            mapView.getMapAsync(this);
+
+
+
+
+        }
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -91,6 +134,37 @@ public class Nearby_shopsFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+
+        MainActivity mainActivity = (MainActivity)getActivity();
+        double[] location = mainActivity.getData();
+
+
+
+
+
+
+
+
+
+
+
+        MapsInitializer.initialize(getContext());
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(location[0] , location[1])).title("Current Position"));
+        CameraPosition current_location  = CameraPosition.builder().target(new LatLng(location[0], location[1])).zoom(16).bearing(0).tilt(45).build();
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(current_location));
+
+
+
+
+
+
+
     }
 
     /**

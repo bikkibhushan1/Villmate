@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AccountFragment.OnFragmentInteractionListener, Nearby_shopsFragment.OnFragmentInteractionListener {
@@ -80,8 +81,27 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         fragmentTransaction.add(R.id.fragment_container, home_fragment);
         fragmentTransaction.commit();*/
 
-        Intent intent = new Intent(getApplicationContext() , LocationActivity.class);
-        startActivity(intent);
+
+
+
+
+
+
+
+
+
+        getData();
+
+
+
+
+
+
+
+
+
+
+
 
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -101,4 +121,23 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
     public void onFragmentInteraction(Uri uri) {
 
     }
+
+    public double[] getData(){
+
+
+
+        double[] location = new double[2];
+        Intent intent = getIntent();
+        location[0] =intent.getDoubleExtra("lat", 1);
+        location[1] =intent.getDoubleExtra("long", 1);
+
+
+
+
+        return location;
+
+
+
+    }
+
 }
