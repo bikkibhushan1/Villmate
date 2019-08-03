@@ -55,6 +55,18 @@ public class LocationActivity extends AppCompatActivity {
             }
         });
 
+        Button button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this , MainActivity.class);
+
+
+                startActivity(intent);
+
+            }
+        });
+
 
 
 
@@ -141,29 +153,9 @@ public class LocationActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

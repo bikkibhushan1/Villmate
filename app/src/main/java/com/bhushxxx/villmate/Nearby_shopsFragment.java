@@ -145,19 +145,28 @@ public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallbac
 
 
 
-
-
-
-
-
-
-
-
         MapsInitializer.initialize(getContext());
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         googleMap.addMarker(new MarkerOptions().position(new LatLng(location[0] , location[1])).title("Current Position"));
         CameraPosition current_location  = CameraPosition.builder().target(new LatLng(location[0], location[1])).zoom(16).bearing(0).tilt(45).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(current_location));
+
+
+        all_nearby_shops();
+
+
+
+
+
+
+
+
+    }
+
+    private void all_nearby_shops() {
+
+        // logic for receiving nearby shops from database
+
 
 
 
