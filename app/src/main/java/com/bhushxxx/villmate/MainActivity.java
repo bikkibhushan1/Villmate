@@ -1,31 +1,26 @@
 package com.bhushxxx.villmate;
 
-import android.animation.Animator;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AccountFragment.OnFragmentInteractionListener, Nearby_shopsFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AccountFragment.OnFragmentInteractionListener, NearbyShopsMapFragment.OnFragmentInteractionListener {
 
     private FragmentManager fragmentManager;
 
     HomeFragment home_fragment = new HomeFragment();
-    Nearby_shopsFragment nearby_shops_fragment = new Nearby_shopsFragment();
+    NearbyShopsMapFragment nearby_shops_fragment = new NearbyShopsMapFragment();
     AccountFragment account_fragment = new AccountFragment();
 
 

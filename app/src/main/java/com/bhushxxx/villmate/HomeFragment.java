@@ -1,14 +1,18 @@
 package com.bhushxxx.villmate;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 /**
@@ -66,7 +70,37 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        TextView categories_text= view.findViewById(R.id.categories_text);
+        categories_text.setPaintFlags(categories_text.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
+
+
+        CardView[] cardViews =  new CardView[4];
+        cardViews[0] = view.findViewById(R.id.cat_1_card);
+        cardViews[1] = view.findViewById(R.id.cat_2_card);
+        cardViews[2] = view.findViewById(R.id.cat_3_card);
+        cardViews[3] = view.findViewById(R.id.cat_4_card);
+
+        for( int i = 0 ; i< 4; i++){
+
+            final int finalI = i;
+            cardViews[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), NearByShopsSelectionActivity.class);
+                    intent.putExtra("cat_sel", finalI +1);
+                    startActivity(intent);
+                }
+            });
+        }
+
+
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

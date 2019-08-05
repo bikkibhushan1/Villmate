@@ -1,8 +1,6 @@
 package com.bhushxxx.villmate;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Camera;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -27,12 +25,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Nearby_shopsFragment.OnFragmentInteractionListener} interface
+ * {@link NearbyShopsMapFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Nearby_shopsFragment#newInstance} factory method to
+ * Use the {@link NearbyShopsMapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallback {
+public class NearbyShopsMapFragment extends Fragment  implements OnMapReadyCallback {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -50,7 +48,7 @@ public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallbac
 
     private OnFragmentInteractionListener mListener;
 
-    public Nearby_shopsFragment() {
+    public NearbyShopsMapFragment() {
         // Required empty public constructor
     }
 
@@ -60,11 +58,11 @@ public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallbac
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Nearby_shopsFragment.
+     * @return A new instance of fragment NearbyShopsMapFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Nearby_shopsFragment newInstance(String param1, String param2) {
-        Nearby_shopsFragment fragment = new Nearby_shopsFragment();
+    public static NearbyShopsMapFragment newInstance(String param1, String param2) {
+        NearbyShopsMapFragment fragment = new NearbyShopsMapFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -88,8 +86,18 @@ public class Nearby_shopsFragment extends Fragment  implements OnMapReadyCallbac
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view =  inflater.inflate(R.layout.fragment_nearby_shops, container, false);
+        view =  inflater.inflate(R.layout.fragment_nearby_shops_map, container, false);
+
+
+
+
+
+
         return  view;
+
+
+
+
 
 
 

@@ -28,8 +28,10 @@
         android:layout_below="@+id/search_bar"
         android:layout_centerHorizontal="true"
 
+
         android:layout_marginTop="80dp"
         android:text="CATEGORIES"
+
 
         android:textColor="@color/colorAccent"
         android:textSize="30dp" />
@@ -51,6 +53,10 @@
             android:id="@+id/cat_1_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_effect"
+
 
 
             android:layout_marginStart="20dp"
@@ -80,7 +86,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#008577"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_effect">
 
             <TextView
                 android:id="@+id/cat_2"
@@ -104,7 +113,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#008577"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_effect">
 
             <TextView
                 android:id="@+id/cat_3"
@@ -127,7 +139,10 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:cardBackgroundColor="#008577"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/ripple_effect">
 
             <TextView
                 android:id="@+id/cat_4"
@@ -144,6 +159,7 @@
     </RelativeLayout>
 
 </ScrollView>
+
 
 
 
