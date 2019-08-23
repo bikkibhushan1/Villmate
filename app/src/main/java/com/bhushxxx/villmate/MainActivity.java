@@ -71,11 +71,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
 
 
-        /*fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.fragment_container, home_fragment);
-        fragmentTransaction.commit();*/
-
 
 
 
@@ -134,5 +129,6 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
 
     }
+
 
 }
