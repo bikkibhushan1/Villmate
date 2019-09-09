@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment {
 
 
         TextView categories_text= view.findViewById(R.id.categories_text);
-        categories_text.setPaintFlags(categories_text.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
 
 
 

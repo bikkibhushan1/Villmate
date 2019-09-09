@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,18 +15,38 @@
         android:id="@+id/cat_sel_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#FF008577"
-
-
-        />
+        android:background="#FF008577" />
 
 
 
     <TextView
+
         android:id="@+id/cat_sel_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/cat_sel_image"
-        android:padding="20dp"/>
+        android:gravity="center"
+        android:textSize="30dp"
+        android:text="default_text"/>
+
+    <TextView
+        android:id="@+id/nearby_shops_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cat_sel_text"
+
+        android:padding="20dp"
+        android:text="Nearby Shops"
+        android:textColor="#FF008577"
+        android:textSize="20dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/nearby_shops_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="392dp"
+        android:layout_below="@+id/nearby_shops_text"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"/>
 
 </RelativeLayout>
+
