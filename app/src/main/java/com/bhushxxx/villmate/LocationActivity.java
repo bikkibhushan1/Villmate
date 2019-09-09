@@ -61,7 +61,6 @@ public class LocationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(LocationActivity.this , MainActivity.class);
 
-
                 startActivity(intent);
 
             }
