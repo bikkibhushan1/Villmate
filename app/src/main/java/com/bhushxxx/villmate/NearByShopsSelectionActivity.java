@@ -5,9 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,24 +51,23 @@ public class NearByShopsSelectionActivity extends AppCompatActivity {
 
 
 
-        List<ModelClass> modelClassList = new ArrayList<>();
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_1"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_foreground,"Shop_2"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_3"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_4"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_5"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_6"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_7"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_8"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"Shop_9"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_foreground,"Shop_10"));
-        modelClassList.add(new ModelClass(R.drawable.ic_launcher_foreground,"Shop_11"));
+        List<NearByShopsSelectionModelClass> nearByShopsSelectionModelClassList = new ArrayList<>();
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_foreground,"Shop_2","161"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_3","1615"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_4","154"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_5","68"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_6","161"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_7","8542"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_8","221"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_9","78"));
 
 
 
-        Adapter adapter = new Adapter(modelClassList,getApplicationContext());
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+
+        NearByShopsSelectionAdapter nearByShopsSelectionAdapter = new NearByShopsSelectionAdapter(nearByShopsSelectionModelClassList,getApplicationContext());
+        recyclerView.setAdapter(nearByShopsSelectionAdapter);
+        nearByShopsSelectionAdapter.notifyDataSetChanged();
 
 
 
