@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CartActivity"></activity>
+        <activity android:name=".CategoryBrandActivity"></activity>
         <activity android:name=".NearByShopsSelectionActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CheckoutActivity" />
@@ -27,9 +27,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBrMgCA4sNdwInlWVABJo7vQ2yTMrq9m5M" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

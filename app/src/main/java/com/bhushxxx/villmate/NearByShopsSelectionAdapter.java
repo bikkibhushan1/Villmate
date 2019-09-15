@@ -73,16 +73,16 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
 
         ConstraintLayout Recycler_view_layout;
 
-        private ImageView imageView;
-        private TextView title;
+        private ImageView shop_image;
+        private TextView shop_name;
         private TextView category_price;
 
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
 
-            imageView = itemView.findViewById(R.id.shop_image);
-            title = itemView. findViewById(R.id.shop_name);
+            shop_image = itemView.findViewById(R.id.shop_image);
+            shop_name = itemView. findViewById(R.id.shop_name);
             category_price = itemView.findViewById(R.id.category_price);
 
             Recycler_view_layout = itemView.findViewById(R.id.nearby_shops_recycler_view_layout_id);
@@ -91,10 +91,10 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
 
         }
 
-        private void setData(int resource, String titleText, String Category_price){
+        private void setData(int Shop_image, String Shop_name, String Category_price){
 
-            imageView.setImageResource(resource);
-            title.setText(titleText);
+            shop_image.setImageResource(Shop_image);
+            shop_name.setText(Shop_name);
             category_price.setText("Rs: " + Category_price);
         }
 

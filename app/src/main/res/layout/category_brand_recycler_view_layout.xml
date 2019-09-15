@@ -8,12 +8,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/nearby_shops_recycler_view_layout_id">
+    android:id="@+id/category_brand_recycler_view_layout_id">
 
 
     <androidx.cardview.widget.CardView
 
-        app:cardCornerRadius="50dp"
+        app:cardCornerRadius="18dp"
         android:outlineAmbientShadowColor="#008577"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,23 +27,23 @@
 
 
             <ImageView
-                android:id="@+id/shop_image"
+                android:id="@+id/brand_image"
                 android:layout_width="117dp"
                 android:layout_height="81dp"
                 tools:srcCompat="@tools:sample/avatars" />
             <TextView
-                android:id="@+id/shop_name"
+                android:id="@+id/brand_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/shop_image"
+                android:layout_toEndOf="@+id/brand_image"
                 android:layout_marginStart="30dp"
                 android:layout_centerVertical="true"
                 android:text="default_text"/>
             <TextView
-                android:id="@+id/category_price"
+                android:id="@+id/brand_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@+id/shop_name"
+                android:layout_toEndOf="@+id/brand_name"
                 android:layout_marginStart="30dp"
                 android:layout_centerVertical="true"
                 android:text="default_text"/>

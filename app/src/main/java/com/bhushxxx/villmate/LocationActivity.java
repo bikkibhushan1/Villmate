@@ -59,7 +59,7 @@ public class LocationActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LocationActivity.this , MainActivity.class);
+                Intent intent = new Intent(LocationActivity.this , CategoryBrandActivity.class);
 
                 startActivity(intent);
 

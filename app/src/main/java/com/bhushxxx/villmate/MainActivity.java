@@ -69,28 +69,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
 
-
-
-
-
-
-
-
-
-
-
-
         getData();
-
-
-
-
-
-
-
-
-
-
 
 
 

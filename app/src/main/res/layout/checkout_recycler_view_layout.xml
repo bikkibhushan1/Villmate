@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/checkout_recycler_view_layout_id">
+
+
+    <androidx.cardview.widget.CardView
+
+        app:cardCornerRadius="50dp"
+        android:outlineAmbientShadowColor="#008577"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/shop_image"
+                android:text="default_text" />
+
+            <TextView
+                android:id="@+id/shop_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/category_name"
+                android:text="default_text" />
+
+            <TextView
+                android:id="@+id/category_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/shop_name"
+                android:text="default_text" />
+
+            <TextView
+                android:id="@+id/quantity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/category_name"
+                android:layout_alignStart="@+id/category_name"
+                android:layout_alignBottom="@+id/incr_but"
+                android:layout_marginTop="10dp"
+                android:paddingVertical="12dp"
+                android:text="Quantity (kg) : " />
+
+            <EditText
+                android:id="@+id/quantity_set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop_name"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/incr_but"
+                android:text="15" />
+
+
+            <ImageButton
+                android:id="@+id/incr_but"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop_name"
+                android:layout_toEndOf="@+id/quantity_text"
+                android:layout_alignTop="@+id/quantity_set"
+                android:layout_alignBottom="@+id/quantity_set"
+                android:layout_marginLeft="15dp"
+
+                />
+
+
+            <ImageButton
+                android:id="@+id/decr_but"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shop_name"
+                android:layout_toEndOf="@+id/quantity_set"
+                android:layout_alignTop="@+id/quantity_set"
+                android:layout_alignBottom="@+id/quantity_set"
+                android:layout_marginLeft="5dp" />
+
+
+            <TextView
+                android:id="@+id/total_per_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantity_text"
+                android:layout_alignStart="@+id/category_name"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="10dp"
+
+                android:text="Total (Rs) : " />
+
+            <ImageButton
+                android:id="@+id/checkout_per_item_delete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@+id/total_per_item"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-32dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/delete_swap"
+                android:background="#00000000"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

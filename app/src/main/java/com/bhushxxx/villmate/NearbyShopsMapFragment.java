@@ -87,12 +87,6 @@ public class NearbyShopsMapFragment extends Fragment  implements OnMapReadyCallb
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view =  inflater.inflate(R.layout.fragment_nearby_shops_map, container, false);
-
-
-
-
-
-
         return  view;
 
 
@@ -161,12 +155,6 @@ public class NearbyShopsMapFragment extends Fragment  implements OnMapReadyCallb
 
 
         all_nearby_shops();
-
-
-
-
-
-
 
 
     }
