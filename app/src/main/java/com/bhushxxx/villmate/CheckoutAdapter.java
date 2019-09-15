@@ -76,7 +76,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
 
             public Viewholder(@NonNull View itemView , final OnItemClickListener listener) {
                 super(itemView);
-                total_per_item();
+
                 Recycler_view_layout = itemView.findViewById(R.id.checkout_recycler_view_layout_id);
 
                 category_name = itemView. findViewById(R.id.category_name);
