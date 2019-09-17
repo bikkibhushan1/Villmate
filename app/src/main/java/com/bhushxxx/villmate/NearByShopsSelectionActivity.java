@@ -1,6 +1,7 @@
 package com.bhushxxx.villmate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,17 +53,15 @@ public class NearByShopsSelectionActivity extends AppCompatActivity {
 
 
         List<NearByShopsSelectionModelClass> nearByShopsSelectionModelClassList = new ArrayList<>();
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_foreground,"Shop_2","161"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_3","1615"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_4","154"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_5","68"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_6","161"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_7","8542"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_8","221"));
-        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_9","78"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161","12"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161","12"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161","12"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161","12"));
+        nearByShopsSelectionModelClassList.add(new NearByShopsSelectionModelClass(R.drawable.ic_launcher_background,"Shop_1","161","12"));
 
-
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this , DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.horizontal_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
 
         NearByShopsSelectionAdapter nearByShopsSelectionAdapter = new NearByShopsSelectionAdapter(nearByShopsSelectionModelClassList,getApplicationContext());

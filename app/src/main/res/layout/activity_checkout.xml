@@ -48,9 +48,9 @@
             android:id="@+id/checkout_total"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Total : "
+            android:text="Total (Rs) : "
             android:textAlignment="center"
-            android:textSize="35dp"
+            android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

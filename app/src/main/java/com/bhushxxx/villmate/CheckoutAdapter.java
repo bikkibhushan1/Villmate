@@ -55,8 +55,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(view.getContext(),LocationActivity.class);
-                view.getContext().startActivity(intent);
+
             }
         });
     }
@@ -74,7 +73,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
             private ImageButton checkout_per_item_delete, incr_but, decr_but;
             private EditText quantity_set;
 
-            public Viewholder(@NonNull View itemView , final OnItemClickListener listener) {
+            public Viewholder(@NonNull final View itemView , final OnItemClickListener listener) {
                 super(itemView);
 
                 Recycler_view_layout = itemView.findViewById(R.id.checkout_recycler_view_layout_id);
@@ -101,6 +100,8 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
                             if (position != RecyclerView.NO_POSITION) {
                                 listener.onDeleteClick(position);
 
+                                Toast.makeText(itemView.getContext(), "Item Deleted from Cart", Toast.LENGTH_LONG).show();
+
                             }
                         }
                     }
@@ -121,13 +122,19 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
 
                         quantity_set.setText(String.valueOf(Integer.parseInt(quantity_set.getText().toString()) - 1));
                         total_per_item();
+
+
                     }
                 });
+
+
+
+
             }
 
         public void total_per_item() {
 
-            total_per_item.setText(String.valueOf(Integer.parseInt(quantity_set.getText().toString())*Integer.parseInt(category_price.getText().toString().substring(4))));
+            total_per_item.setText("Total (Rs) : " + (Integer.parseInt(quantity_set.getText().toString())*Integer.parseInt(category_price.getText().toString().substring(4))));
         }
 
         private void setData(String Category_name, String Shop_name, String Category_price){
@@ -135,6 +142,7 @@ public class CheckoutAdapter extends RecyclerView.Adapter<CheckoutAdapter.Viewho
             category_name.setText(Category_name);
             category_price.setText("Rs: " + Category_price);
             shop_name.setText(Shop_name);
+
         }
     }
 

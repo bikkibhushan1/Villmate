@@ -1,6 +1,9 @@
 package com.bhushxxx.villmate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -13,12 +16,12 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements HomeFragment.OnFragmentInteractionListener, AccountFragment.OnFragmentInteractionListener, NearbyShopsMapFragment.OnFragmentInteractionListener {
 
     private FragmentManager fragmentManager;
-
     HomeFragment home_fragment = new HomeFragment();
     NearbyShopsMapFragment nearby_shops_fragment = new NearbyShopsMapFragment();
     AccountFragment account_fragment = new AccountFragment();
@@ -68,13 +71,14 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-
+        check_internet_connectivity();
         getData();
 
 
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+
 
     public void checkout_activity(View view) {
 
@@ -104,6 +108,29 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
 
 
         return location;
+
+
+
+    }
+
+    private void check_internet_connectivity() {
+
+    ConnectivityManager cm =
+            (ConnectivityManager)getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+
+    NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+    boolean isConnected = activeNetwork != null &&
+            activeNetwork.isConnectedOrConnecting();
+
+
+    if(isConnected == true){
+
+        Toast.makeText(getApplicationContext(),"Internet connected", Toast.LENGTH_LONG).show();
+    }
+    else {
+
+        Toast.makeText(getApplicationContext(),"No Internet Connection", Toast.LENGTH_LONG).show();
+    }
 
 
 

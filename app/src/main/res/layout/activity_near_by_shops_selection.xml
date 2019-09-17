@@ -15,7 +15,7 @@
         android:id="@+id/cat_sel_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#FF008577" />
+        android:background="@color/app_default_color" />
 
 
 
@@ -37,7 +37,7 @@
 
         android:padding="20dp"
         android:text="Nearby Shops"
-        android:textColor="#FF008577"
+        android:textColor="@color/colorAccent"
         android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView

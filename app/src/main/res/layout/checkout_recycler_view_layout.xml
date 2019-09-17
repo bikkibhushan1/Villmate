@@ -12,8 +12,8 @@
 
     <androidx.cardview.widget.CardView
 
-        app:cardCornerRadius="50dp"
-        android:outlineAmbientShadowColor="#008577"
+        app:cardCornerRadius="20dp"
+        android:outlineAmbientShadowColor="@color/app_default_color"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">

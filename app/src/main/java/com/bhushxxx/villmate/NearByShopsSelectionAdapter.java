@@ -21,10 +21,6 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
         this.nearByShopsSelectionModelClassList = nearByShopsSelectionModelClassList;
         this.context = context;
 
-
-
-
-
     }
 
     @NonNull
@@ -37,12 +33,11 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, final int position) {
-        int resource = nearByShopsSelectionModelClassList.get(position).getImageResource();
-        final String title = nearByShopsSelectionModelClassList.get(position).getTitle();
+        int shop_image = nearByShopsSelectionModelClassList.get(position).getShop_image();
+        final String shop_name = nearByShopsSelectionModelClassList.get(position).getShop_name();
         final String category_price = nearByShopsSelectionModelClassList.get(position).getCategory_price();
-        holder.setData(resource,title,category_price);
-
-
+        final String shop_distance = nearByShopsSelectionModelClassList.get(position).getShop_distance();
+        holder.setData(shop_image,shop_name,category_price,shop_distance);
 
         holder.Recycler_view_layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +71,7 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
         private ImageView shop_image;
         private TextView shop_name;
         private TextView category_price;
+        private TextView shop_distance;
 
 
         public Viewholder(@NonNull View itemView) {
@@ -84,6 +80,7 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
             shop_image = itemView.findViewById(R.id.shop_image);
             shop_name = itemView. findViewById(R.id.shop_name);
             category_price = itemView.findViewById(R.id.category_price);
+            shop_distance = itemView.findViewById(R.id.shop_distance);
 
             Recycler_view_layout = itemView.findViewById(R.id.nearby_shops_recycler_view_layout_id);
 
@@ -91,11 +88,12 @@ public class NearByShopsSelectionAdapter extends RecyclerView.Adapter<NearByShop
 
         }
 
-        private void setData(int Shop_image, String Shop_name, String Category_price){
+        private void setData(int Shop_image, String Shop_name, String Category_price, String Shop_distance){
 
             shop_image.setImageResource(Shop_image);
             shop_name.setText(Shop_name);
-            category_price.setText("Rs: " + Category_price);
+            category_price.setText("Rs: " + Category_price + " ");
+            shop_distance.setText("distance : " + Shop_distance + " km");
         }
 
 

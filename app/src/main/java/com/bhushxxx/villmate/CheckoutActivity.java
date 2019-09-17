@@ -1,10 +1,13 @@
 package com.bhushxxx.villmate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -41,6 +44,11 @@ public class CheckoutActivity extends AppCompatActivity {
         checkoutModelClassList.add(new CheckoutModelClass("bikki","Shop_5","85261"));
         checkoutModelClassList.add(new CheckoutModelClass("bikki","Shop_5","85261"));
         checkoutModelClassList.add(new CheckoutModelClass("bikki","Shop_5","85261"));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this , DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.horizontal_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
 
         final CheckoutAdapter checkoutAdapter = new CheckoutAdapter(checkoutModelClassList,getApplicationContext());
         recyclerView.setAdapter(checkoutAdapter);

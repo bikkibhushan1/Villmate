@@ -1,9 +1,12 @@
 package com.bhushxxx.villmate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -27,6 +30,7 @@ public class CategoryBrandActivity extends AppCompatActivity {
 
 
 
+
         List<CategoryBrandModelClass> categoryBrandModelClassList = new ArrayList<>();
         categoryBrandModelClassList.add(new CategoryBrandModelClass(R.drawable.ic_launcher_background,"PATANJALI","161"));
         categoryBrandModelClassList.add(new CategoryBrandModelClass(R.drawable.ic_launcher_background,"PATANJALI","1651"));
@@ -34,10 +38,17 @@ public class CategoryBrandActivity extends AppCompatActivity {
         categoryBrandModelClassList.add(new CategoryBrandModelClass(R.drawable.ic_launcher_background,"PATANJALI","161"));
 
 
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this , DividerItemDecoration.VERTICAL);
+        dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.horizontal_divider));
+        recyclerView.addItemDecoration(dividerItemDecoration);
+
+
+
 
 
         CategoryBrandAdapter categoryBrandAdapter = new CategoryBrandAdapter(categoryBrandModelClassList,getApplicationContext());
         recyclerView.setAdapter(categoryBrandAdapter);
+
         categoryBrandAdapter.notifyDataSetChanged();
 
 

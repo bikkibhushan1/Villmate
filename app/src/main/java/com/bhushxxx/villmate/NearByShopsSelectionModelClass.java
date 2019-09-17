@@ -3,27 +3,34 @@ package com.bhushxxx.villmate;
 
 public class NearByShopsSelectionModelClass {
 
-    private int imageResource;
-    private String title, category_price ;
+    private int shop_image;
+    private String shop_name, category_price, shop_distance ;
 
 
-    public NearByShopsSelectionModelClass(int imageResource, String title, String category_price) {
-        this.imageResource = imageResource;
-        this.title = title;
+    public NearByShopsSelectionModelClass(int shop_image, String shop_name, String category_price, String shop_distance) {
+        this.shop_image = shop_image;
+        this.shop_name = shop_name;
         this.category_price=category_price;
+        this.shop_distance = shop_distance;
 
 
     }
 
-    public int getImageResource() {
-        return imageResource;
+    public int getShop_image() {
+        return shop_image;
     }
 
-    public String getTitle() {
-        return title;
+    public String getShop_name() {
+        return shop_name;
     }
 
     public String getCategory_price() {
         return category_price;
     }
+
+    public String getShop_distance() {
+        return shop_distance;
+    }
+
+
 }
